@@ -1,0 +1,17 @@
+{
+    "name": "cisco/framework",
+    "description": "projet framework formation poo",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Cisco\\Framework\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "vlucas/phpdotenv": "5.4.x-dev"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "6.2.x-dev"
+    }
+}
