@@ -1,5 +1,9 @@
 <?php
 
+use App\Kernel;
+
+
+
 // Bienvenur dans notre framework fait maison
 //-------------------------------------------------------------------
 // L'index.php représente le 'FontController'
@@ -14,16 +18,27 @@
 // Chargement du fichier de configuration
     require_once dirname(__DIR__) . "/config/bootstrap.php";
 
-    dd($_ENV);
+    // dd($_SERVER);
 
-
+    if($_SERVER ['REQUEST_URI'] == "/")
+    {
+            dd("page d'accueil");
+    }
+    else{
+        dd("l'utilisateur veut accéder à une autre page");
+    }
 
 // Création d'une nouvelle instance du noyau de l'application
+    // $app = new App\Kernel();
+    $kernel = new App\Kernel($container);
 
-
+/**
+ * Le fontController demande au noyau de soummettre la requêteet de récupérer la réponse correspondante
+ */
 
 // Soumission de la requête au noyau
 // Récupération de la réponse
+    $response = $kernel->handleRequest();
 
 
 
