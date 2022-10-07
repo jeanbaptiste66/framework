@@ -56,6 +56,7 @@ use Symfony\Component\HttpFoundation\Response;
         public function handleRequest() : Response
         {
             $router = $this->container->get(RouterInterface::class);
-            dd($router);
+            $router_reponse = $router->run();
+            dd($router_reponse);
         }
     }
